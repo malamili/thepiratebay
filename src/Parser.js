@@ -230,7 +230,6 @@ export function parseResults(
 
   const parsedResultsArray = results
     .get()
-    .filter(result => !result.uploaderLink.includes('undefined'));
 
   return filter.verified === true
     ? parsedResultsArray.filter(result => result.verified === true)
