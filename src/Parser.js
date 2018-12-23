@@ -70,10 +70,7 @@ export function parsePage(
     if (error) console.log(error);
 
     const proxyUrls = [
-      'https://thepiratebay.org',
-      'https://thepiratebay.se',
-      'https://pirateproxy.one',
-      'https://ahoy.one'
+      'https://thepiratebay.org'
     ];
 
     const options = {
