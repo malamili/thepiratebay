@@ -1,9 +1,9 @@
 {
-  "name": "thepiratebay",
+  "name": "malamili-thepiratebay",
   "version": "1.4.7",
   "description": "The pirate bay client",
-  "homepage": "http://github.com/t3chnoboy/thepiratebay",
-  "repository": "git://github.com/t3chnoboy/thepiratebay.git",
+  "homepage": "http://github.com/malamili/thepiratebay",
+  "repository": "git://github.com/malamili/thepiratebay.git",
   "contributors": [
     "Dmitry Mazuro <dmitry.mazuro@icloud.com>",
     "Amila Welihinda <amilajack@gmail.com>"
