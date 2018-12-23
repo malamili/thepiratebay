@@ -164,6 +164,35 @@ export function search(title: string = '*', opts: Object = {}) {
   return parsePage(url, parseResults, rest.filter);
 }
 
+export function browse(opts: Object = {}) {
+  const convertedCategory = resolveCategory(
+    opts.category,
+    parseInt(searchDefaults.category, 10)
+  );
+
+  const castedOptions = {
+    ...opts,
+    page: opts.page ? castNumberToString(opts.page) : searchDefaults.page,
+    category: opts.category
+      ? castNumberToString(convertedCategory)
+      : searchDefaults.category,
+    orderby: opts.orderby
+      ? castNumberToString(opts.orderby)
+      : searchDefaults.orderBy
+  };
+
+  const { page, category, orderBy, sortBy, ...rest } = {
+    ...searchDefaults,
+    ...castedOptions
+  };
+
+  const orderingNumber = convertOrderByObject({ orderBy, sortBy });
+
+  const url = `${baseUrl}/browse/${category}/${page}/${orderingNumber}`;
+
+  return parsePage(url, parseResults);
+}
+
 export function getTorrent(id: string | number | { link: string }) {
   const url = (() => {
     if (typeof id === 'object') {
